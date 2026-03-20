@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Cleaned and renamed personal finance transactions from rawsource"
+    columns:
+    - name: user_id
+      description: "Unique identifier for each user"
+      data_tests:
+        - not_null
+
+    - name: date
+      description: "Date of the finacial record"
+      data_tests:
+        - not_null
+    
+    - name: monthly_income
+      description: "Total monthly income in USD"
+      data_tests:
+        - not_null
+
+    - name: monthly_expense_total
+      description: "Total monthly expenses in USD"
+      data_tests:
+        - not_null
+    
+    - name: net_income
+      description: "Monthly income minus total expenses"
+      data_tests:
+        - not_null
+
+    - name: financial_scenario
+      description: "Economic scenerio: normal, inflation, or recession"
+      data_tests:
+        - not_null
+        - accepted_values:
+            arguments:
+              values: ['normal','inflation', 'recession']
+
+    - name: income_type
+      description: "Type of income: salary, freelance, or mixed"
+      data_tests:
+        - not_null
+        - accepted_values:
+            arguments:
+              values: ['salary', 'freelance','mixed']
+
+    - name: financial_stress_level
+      description: "Self-reported stress level: low, medium, or high"
+      data_tests:
+        - not_null
+        - accepted_values:
+            values: ['low', 'medium', 'high']
+
+    - name: cash_flow_status
+      description: "Whether cash flow is positive, neutral, or negative"
+      data_tests:
+        - not_null
+        - accepted_values:
+            arguments:
+              values: ['positive', 'neutral', 'negative']
+    
+    - name: fraud_flag
+      description: "1 if transaction flagged as fraudulent, 0 otherwise"
+      data_tests:
+        - not_null

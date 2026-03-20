@@ -1,3 +1,8 @@
 venv/
 data/raw/
 .env
+finance_dbt/target/
+finance_dbt/dbt_packages/
+finance_dbt/logs/
+logs/
+
