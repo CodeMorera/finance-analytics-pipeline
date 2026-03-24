@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: monthly_spending
+    description: "Total expenses by month and category"
+    columns:
+      - name: year_month
+        description: "Month of spending in YYY-MM format"
+        data_tests:
+          - not_null
+      - name: category
+        description: "Spending category"
+        data_tests:
+          - not_null
+      - name: monthly_expense
+        description: "Total expense for that month and category"
+        data_tests:
+          - not_null
+  - name: category_summary
+    description: "Total and average spend per category across all time"
+    columns:
+      - name: category
+        description: "Spending category"
+        data_tests:
+          - not_null
+          - unique
+      - name: total_spend
+        description: "Total spend across all months"
+        data_tests:
+          - not_null
+  - name: income_vs_expense
+    description: "Monthly income vs expensewith runnin balance"
+    columns:
+      - name: year_month
+        description: "Month in YYYY-MM format"
+        data_tests:
+          - not_null
+          - unique
+      - name: running_balance
+        descriptio: "Cumulative net income over time"
+        data_tests:
+          - not_null
