@@ -40,7 +40,7 @@ python src/load.py
 - [x] Week 1 — Repo setup
 - [x] Week 2 — Data cleaning script
 - [x] Week 3 — PostgreSQL loading with assertions
-- [ ] Week 4 — dbt models
+- [x] Week 4 — dbt models
 - [ ] Week 5 — dbt mart models
 - [ ] Week 6 — dbt tests and documentation
 - [ ] Week 7 — Power BI dashboard
