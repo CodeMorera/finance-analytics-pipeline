@@ -13,6 +13,9 @@ using Python, PostgreSQL, dbt, and Power BI.
 ## Project Architecture
 Raw CSV → Python Cleaning → PostgreSQL → dbt Models → Power BI Dashboard
 
+## Lineage Graph
+![alt text](image-1.png)
+
 ## Setup Instructions
 
 ### 1. Clone the repo
@@ -41,6 +44,7 @@ python src/load.py
 - [x] Week 2 — Data cleaning script
 - [x] Week 3 — PostgreSQL loading with assertions
 - [x] Week 4 — dbt models
-- [ ] Week 5 — dbt mart models
-- [ ] Week 6 — dbt tests and documentation
+- [x] Week 5 — dbt mart models
+- [x] Week 6 — dbt tests and documentation
 - [ ] Week 7 — Power BI dashboard
+![alt text](image.png)
