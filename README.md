@@ -47,4 +47,3 @@ python src/load.py
 - [x] Week 5 — dbt mart models
 - [x] Week 6 — dbt tests and documentation
 - [ ] Week 7 — Power BI dashboard
-![alt text](image.png)

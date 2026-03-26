@@ -12,6 +12,13 @@ models:
         description: "Spending category"
         data_tests:
           - not_null
+      - name: financial_scenario
+        description: "Economic scenerio: normal, inflation, or recession"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['normal','inflation', 'recession']
       - name: monthly_expense
         description: "Total expense for that month and category"
         data_tests:
