@@ -16,8 +16,14 @@ Raw CSV → Python Cleaning → PostgreSQL → dbt Models → Power BI Dashboard
 ## Lineage Graph
 ![alt text](image-1.png)
 
-## Setup Instructions
+## Dashboard
+### Spending Overview
+![alt text](dashboard_page1.png)
 
+### Income vs Expense
+![alt text](dashboard_page2.png)
+
+## Setup Instructions
 ### 1. Clone the repo
 git clone https://github.com/CodeMorera/finance-analytics-pipeline.git
 
@@ -46,4 +52,4 @@ python src/load.py
 - [x] Week 4 — dbt models
 - [x] Week 5 — dbt mart models
 - [x] Week 6 — dbt tests and documentation
-- [ ] Week 7 — Power BI dashboard
+- [x] Week 7 — Power BI dashboard

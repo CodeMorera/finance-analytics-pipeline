@@ -1,4 +1,4 @@
-version: 2
+version: 3
 
 models:
   - name: monthly_spending
@@ -6,6 +6,14 @@ models:
     columns:
       - name: year_month
         description: "Month of spending in YYY-MM format"
+        data_tests:
+          - not_null
+      - name: month_date
+        description: “Take the text month and turn it into the first day of that month as a real date.”
+        data_tests:
+          - not_null
+      - name: year_month_sort
+        description: "Create a helper number so months sort in the correct order."
         data_tests:
           - not_null
       - name: category
