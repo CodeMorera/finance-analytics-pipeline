@@ -1,10 +1,16 @@
 # Finance Analytics Pipeline
 ## About
-This project demonstrates a complete analytics engineering workflow built 
-to showcase SQL, Python, dbt, and Power BI skills for data analyst and 
-analytics engineer roles. It ingests synthetic personal finance data, 
-applies data quality checks, models it using dbt, and visualizes insights 
-in Power BI. 
+An end-to-end finance analytics pipeline built with Python, PostgreSQL, dbt Core, and Power BI. It ingests synthetic personal finance data, cleans and validates it, transforms it into analytics-ready marts, and surfaces spending and income insights through an interactive BI dashboard.
+
+## Business Value
+This pipeline turns raw finance data into analytics-ready datasets that make it easier to monitor spending patterns, compare economic scenarios, and track income, expenses, and running balances over time.
+
+## Key Features
+- Cleaned and loaded 3,000 synthetic finance records into PostgreSQL using Python and SQLAlchemy
+- Built dbt staging and mart models for spending, category summaries, and income vs. expense analysis
+- Added 23 passing dbt tests for data quality and model validation
+- Created Power BI dashboards for spending trends, category analysis, net income, and running balance
+- Modeled multiple economic scenarios: normal, inflation, and recession
 
 ## Tech Stack
 - Python (pandas, SQLAlchemy)
@@ -35,7 +41,7 @@ git clone https://github.com/CodeMorera/finance-analytics-pipeline.git
 ### 2. Create and activate virtual environment
 ```bash
 python -m venv venv
-source venv/Scripts/activate
+venv/Scripts/activate
 ```
 
 ### 3. Install dependencies
@@ -44,11 +50,13 @@ pip install -r requirements.txt
 ```
 
 ### 4. Create a .env file in the root folder with:
+```env
 DB_USER=your_username
 DB_PASSWORD=your_password
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=finance_db
+```
 
 ### 5. Run the pipeline
 ```bash
@@ -62,16 +70,17 @@ cd finance_dbt
 dbt run
 dbt test
 ```
-## Data Source
-Synthetic personal finance dataset from Kaggle — 3,000 records spanning 
-2019–2023 across normal, inflation, and recession economic scenarios. 
-100% privacy-safe synthetic data.
+## dbt Models
 
-## Build Progress
-- [x] Week 1 — Repo setup and project structure
-- [x] Week 2 — Data cleaning with Python and pandas
-- [x] Week 3 — PostgreSQL loading with row count assertions
-- [x] Week 4 — dbt staging model and source configuration
-- [x] Week 5 — dbt mart models with window functions
-- [x] Week 6 — 23 passing data quality tests and lineage documentation
-- [x] Week 7 — Power BI dashboard with spending and income analysis
+### Staging
+- `stg_transactions`: cleaned and standardized transaction-level source data
+
+### Marts
+- `monthly_spending`: monthly spending by category and scenario
+- `category_summary`: aggregated spending by category
+- `income_vs_expense`: income, expense, net income, and running balance over time
+
+## Data Source
+Synthetic personal finance dataset from Kaggle with 3,000 records spanning 2019–2023 across normal, inflation, and recession economic scenarios. 100% privacy-safe synthetic data.
+
+
